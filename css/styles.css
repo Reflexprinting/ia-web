@@ -271,6 +271,25 @@ h3{font-size:1.18rem}
   margin-left:auto;margin-right:auto;padding:22px 28px;border-radius:var(--radius);
   background:var(--white);border:1px solid var(--line-dark);box-shadow:var(--shadow-soft);color:var(--ink);
 }
+.apps-key a{color:var(--blue);font-weight:800}
+
+/* ---------- Apps Lovvi (grille métiers) ---------- */
+.lovvi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+.lovvi-card{
+  position:relative;display:block;text-decoration:none;color:inherit;
+  background:var(--white);border:1px solid var(--line-dark);border-radius:var(--radius);
+  padding:24px 16px;text-align:center;box-shadow:var(--shadow-soft);
+  transition:transform .22s,box-shadow .22s;
+}
+.lovvi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.lovvi-card .icon{font-size:1.7rem;margin:0 auto 8px}
+.lovvi-card h3{font-size:.92rem;margin-bottom:5px;color:var(--ink)}
+.lovvi-card p{font-size:.74rem;color:var(--ink-soft);margin-bottom:10px;min-height:2.4em}
+.lovvi-tag{font-size:.72rem;font-weight:800;color:var(--blue)}
+.lovvi-badge{
+  position:absolute;top:10px;right:10px;font-size:.58rem;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:rgba(16,185,129,.12);color:#0ea472;
+}
 
 /* ---------- Réalisations ---------- */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px}
@@ -284,8 +303,23 @@ h3{font-size:1.18rem}
 .proof-tags span{font-size:.72rem;font-weight:600;padding:4px 11px;border-radius:999px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);color:var(--cyan)}
 .proof-card p{font-size:.92rem;color:rgba(255,255,255,.72);flex:1}
 .proof-msg{margin-top:16px;font-size:.88rem;font-weight:600;color:var(--cyan)}
+.proof-link{display:inline-block;margin-top:10px;font-size:.84rem;font-weight:700;color:var(--cyan);text-decoration:none}
+.proof-link:hover{text-decoration:underline}
 .portfolio-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:8px 0 34px}
 .portfolio-tags span{font-size:.85rem;font-weight:600;padding:9px 18px;border-radius:999px;background:var(--glass);border:1px solid var(--line);color:rgba(255,255,255,.8)}
+
+/* ---------- Écosystème ---------- */
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.eco-card{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  background:var(--glass);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:32px;transition:transform .22s,box-shadow .22s;
+}
+.eco-card:hover{transform:translateY(-5px)}
+.eco-logo{font-weight:800;font-size:1.4rem;margin-bottom:6px}
+.eco-tag{font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:14px}
+.eco-card p:not(.eco-tag){font-size:.92rem;color:rgba(255,255,255,.72);flex:1;margin-bottom:16px}
+.eco-cta{font-weight:700;color:var(--cyan);font-size:.92rem}
 
 /* ---------- IA utile ---------- */
 .ia-band{
@@ -354,7 +388,7 @@ h3{font-size:1.18rem}
 
 /* ---------- Footer ---------- */
 .footer{background:#050D17;border-top:1px solid var(--line);padding:64px 0 34px;font-size:.9rem}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
 .footer h4{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
 .footer a{color:rgba(255,255,255,.72);display:block;padding:4px 0;transition:color .2s}
 .footer a:hover{color:var(--cyan)}
@@ -376,9 +410,9 @@ h3{font-size:1.18rem}
    RESPONSIVE
    ============================================================ */
 @media (max-width:1024px){
-  .cards,.apps-grid,.proof-grid,.ia-grid{grid-template-columns:repeat(2,1fr)}
+  .cards,.apps-grid,.proof-grid,.ia-grid,.eco-grid{grid-template-columns:repeat(2,1fr)}
   .price-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
-  .metiers-grid{grid-template-columns:repeat(3,1fr)}
+  .metiers-grid,.lovvi-grid{grid-template-columns:repeat(3,1fr)}
   .method-grid{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:repeat(3,1fr)}
   .hero-grid{grid-template-columns:1fr;gap:60px}
@@ -398,8 +432,8 @@ h3{font-size:1.18rem}
   .nav a{font-size:1.25rem}
   .burger{display:block}
   .header-actions .btn{display:none}
-  .cards,.cards-2,.apps-grid,.proof-grid,.ia-grid,.method-grid{grid-template-columns:1fr}
-  .metiers-grid{grid-template-columns:repeat(2,1fr)}
+  .cards,.cards-2,.apps-grid,.proof-grid,.ia-grid,.method-grid,.eco-grid{grid-template-columns:1fr}
+  .metiers-grid,.lovvi-grid{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:repeat(2,1fr)}
   .form-grid{grid-template-columns:1fr}
   .form-card{padding:26px 20px}
