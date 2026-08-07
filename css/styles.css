@@ -309,7 +309,7 @@ h3{font-size:1.18rem}
 .portfolio-tags span{font-size:.85rem;font-weight:600;padding:9px 18px;border-radius:999px;background:var(--glass);border:1px solid var(--line);color:rgba(255,255,255,.8)}
 
 /* ---------- Écosystème ---------- */
-.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.eco-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .eco-card{
   display:flex;flex-direction:column;text-decoration:none;color:inherit;
   background:var(--glass);border:1px solid var(--line);border-radius:var(--radius-lg);
