@@ -126,8 +126,8 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
 .header-actions{display:flex;align-items:center;gap:10px}
 .lang-switch{display:flex;gap:2px;background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:3px}
 .lang-switch button{
-  border:none;background:transparent;color:var(--ink-soft);font-weight:700;font-size:.72rem;
-  padding:6px 9px;border-radius:999px;cursor:pointer;font-family:var(--font);transition:.2s;
+  border:none;background:transparent;color:var(--ink-soft);font-weight:700;font-size:.7rem;
+  padding:6px 7px;border-radius:999px;cursor:pointer;font-family:var(--font);transition:.2s;
 }
 .lang-switch button.active{background:var(--olive);color:#fff}
 .burger{display:none;border:none;background:transparent;cursor:pointer;width:42px;height:42px;position:relative;z-index:120}
@@ -476,6 +476,64 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
   justify-content:space-between;align-items:center;color:rgba(255,255,255,.45);font-size:.8rem;
 }
 
+
+/* ---------- Galerie de sites réalisés ---------- */
+.site-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.site-card{
+  display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);
+  transition:transform .25s,box-shadow .25s;text-decoration:none;color:inherit;
+}
+.site-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.site-shot{
+  width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;
+  background:var(--cream-2);border-bottom:1px solid var(--line);display:block;
+}
+.site-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.site-body h3{font-size:1.06rem;margin-bottom:3px}
+.site-sector{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-dark);margin-bottom:12px}
+.site-body p{font-size:.9rem;color:var(--ink-soft);flex:1;margin-bottom:14px}
+.site-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.site-tags span{font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--olive-soft);color:var(--olive-dark)}
+.site-link{font-size:.85rem;font-weight:700;color:var(--olive)}
+.site-card:hover .site-link{color:var(--terra-dark)}
+
+/* ---------- Section technique / intégrations ---------- */
+.tech-section{background:var(--cream-2)}
+.tech-lead{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-bottom:60px}
+.tech-photo{width:100%;height:420px;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lift)}
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tech-item{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow-soft);transition:transform .22s,box-shadow .22s;
+}
+.tech-item:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.tech-item .icon{font-size:1.5rem;display:block;margin-bottom:10px}
+.tech-item h3{font-size:.95rem;margin-bottom:6px}
+.tech-item p{font-size:.8rem;color:var(--ink-soft)}
+.facture-box{
+  margin-top:40px;background:var(--white);border:2px solid var(--terra);
+  border-radius:var(--radius-lg);padding:34px 38px;box-shadow:var(--shadow-soft);
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+}
+.facture-box h3{font-size:1.25rem;margin-bottom:10px;font-family:var(--font-display);font-weight:600}
+.facture-box p{font-size:.94rem;color:var(--ink-soft);max-width:660px}
+.facture-dates{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.facture-dates span{
+  font-size:.78rem;font-weight:700;padding:8px 14px;border-radius:999px;
+  background:var(--terra-soft);color:var(--terra-dark);border:1px solid rgba(196,112,63,.25);
+}
+
+/* ---------- Photo d'illustration de section ---------- */
+.section-photo{
+  width:100%;height:340px;object-fit:cover;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-soft);margin-bottom:52px;
+}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split-photo{width:100%;height:400px;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lift)}
+.split h2{margin-bottom:16px}
+.split p{color:var(--ink-soft)}
+
 /* ---------- Reveal animations ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
@@ -489,7 +547,7 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
    ============================================================ */
 /* Écosystème et FAQ restent accessibles depuis le pied de page et le menu mobile */
 @media (min-width:761px){
-  .nav a[href="#ecosysteme"],.nav a[href="#faq"]{display:none}
+  .nav a[href="#ecosysteme"],.nav a[href="#faq"],.nav a[href="#technique"]{display:none}
 }
 @media (max-width:1300px){
   .header-inner{padding:0 12px 0 18px}
@@ -497,11 +555,14 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
   .nav a{font-size:.84rem}
   .logo strong{font-size:1.15rem}
 }
-@media (max-width:1200px){
+@media (max-width:1280px){
   .nav a[href="#realisations"]{display:none}
 }
-@media (max-width:1080px){
+@media (max-width:1140px){
   .nav a[href="#apps"]{display:none}
+}
+@media (max-width:1000px){
+  .nav a[href="#solutions"]{display:none}
 }
 @media (max-width:900px) and (min-width:761px){
   .header-actions .btn{display:none}
@@ -510,7 +571,11 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
   .price-grid{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto}
 }
 @media (max-width:1024px){
-  .cards,.apps-grid,.proof-grid,.ia-grid,.eco-grid,.human-band{grid-template-columns:repeat(2,1fr)}
+  .cards,.apps-grid,.proof-grid,.ia-grid,.eco-grid,.human-band,.site-grid{grid-template-columns:repeat(2,1fr)}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .tech-lead,.split{grid-template-columns:1fr;gap:44px}
+  .tech-photo,.split-photo{height:320px}
+  .facture-box{grid-template-columns:1fr;padding:28px 26px}
   .metiers-grid,.lovvi-grid{grid-template-columns:repeat(3,1fr)}
   .method-grid{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:repeat(3,1fr)}
@@ -536,7 +601,9 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
   .nav a{font-size:1.25rem;color:var(--ink)}
   .burger{display:block}
   .header-actions .btn{display:none}
-  .cards,.cards-2,.apps-grid,.proof-grid,.ia-grid,.method-grid,.eco-grid,.price-grid,.human-band{grid-template-columns:1fr}
+  .cards,.cards-2,.apps-grid,.proof-grid,.ia-grid,.method-grid,.eco-grid,.price-grid,.human-band,.site-grid,.tech-grid{grid-template-columns:1fr}
+  .section-photo{height:220px;margin-bottom:36px}
+  .tech-photo,.split-photo{height:240px}
   .price-grid{max-width:460px;margin:0 auto}
   .metiers-grid,.lovvi-grid{grid-template-columns:repeat(2,1fr)}
   .timeline{grid-template-columns:repeat(2,1fr)}
