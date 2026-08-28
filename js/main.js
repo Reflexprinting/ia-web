@@ -1,5 +1,5 @@
 /* ============================================================
-   REFLEX IA — main.js
+   REFLEX IA : main.js
    Menu mobile · i18n · FAQ accordéon · Reveal · Formulaire
    Aucune dépendance externe.
    ============================================================ */
@@ -26,7 +26,8 @@
   }
 
   /* ---------- i18n ---------- */
-  var DICT = window.REFLEX_I18N || {};
+  window.REFLEX_I18N = window.REFLEX_I18N || {};
+  var DICT = window.REFLEX_I18N;
   var originals = {}; // sauvegarde du FR (contenu HTML d'origine)
 
   function snapshotFR() {
@@ -73,16 +74,30 @@
   });
 
   // Langue initiale : ?lang= > localStorage > navigateur > fr
-  var initial = "fr";
-  var qs = new URLSearchParams(window.location.search).get("lang");
-  var saved = null;
-  try { saved = localStorage.getItem("reflex_lang"); } catch (e) {}
-  var nav2 = (navigator.language || "fr").slice(0, 2).toLowerCase();
-  if (qs && DICT[qs]) initial = qs;
-  else if (qs === "fr") initial = "fr";
-  else if (saved && (saved === "fr" || DICT[saved])) initial = saved;
-  else if (DICT[nav2]) initial = nav2;
-  if (initial !== "fr") setLang(initial);
+  function initLang() {
+    var initial = "fr";
+    var qs = new URLSearchParams(window.location.search).get("lang");
+    var saved = null;
+    try { saved = localStorage.getItem("reflex_lang"); } catch (e) {}
+    var nav2 = (navigator.language || "fr").slice(0, 2).toLowerCase();
+    if (qs && DICT[qs]) initial = qs;
+    else if (qs === "fr") initial = "fr";
+    else if (saved && (saved === "fr" || DICT[saved])) initial = saved;
+    else if (DICT[nav2]) initial = nav2;
+    if (initial !== "fr") setLang(initial);
+  }
+
+  // Les dictionnaires italien et portugais sont dans un fichier separe,
+  // charge ici pour garder js/i18n.js lisible.
+  if (DICT.it && DICT.pt) {
+    initLang();
+  } else {
+    var extra = document.createElement("script");
+    extra.src = "js/i18n-it-pt.js";
+    extra.onload = initLang;
+    extra.onerror = initLang;
+    document.head.appendChild(extra);
+  }
 
   /* ---------- FAQ accordéon ---------- */
   document.querySelectorAll(".faq-item").forEach(function (item) {
@@ -148,7 +163,7 @@
     data.forEach(function (v, k) { if (k !== "fichier" && v) lines.push(k + ": " + v); });
     var body = encodeURIComponent(lines.join("\n"));
     window.location.href = "mailto:contact@reflexprinting.fr?subject=" +
-      encodeURIComponent("Nouvelle idée — Reflex IA") + "&body=" + body;
+      encodeURIComponent("Nouvelle idée : Reflex IA") + "&body=" + body;
     showSuccess();
   }
 
