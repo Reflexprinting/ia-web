@@ -87,17 +87,19 @@
     if (initial !== "fr") setLang(initial);
   }
 
-  // Les dictionnaires italien et portugais sont dans un fichier separe,
-  // charge ici pour garder js/i18n.js lisible.
-  if (DICT.it && DICT.pt) {
-    initLang();
-  } else {
-    var extra = document.createElement("script");
-    extra.src = "js/i18n-it-pt.js";
-    extra.onload = initLang;
-    extra.onerror = initLang;
-    document.head.appendChild(extra);
+  // Dictionnaires complementaires charges a la demande :
+  // js/i18n-extra.js (bloc "Qui est derriere") puis js/i18n-it-pt.js (IT et PT).
+  function loadDict(src, done) {
+    var sc = document.createElement("script");
+    sc.src = src;
+    sc.onload = done;
+    sc.onerror = done;
+    document.head.appendChild(sc);
   }
+  loadDict("js/i18n-extra.js", function () {
+    if (DICT.it && DICT.pt) initLang();
+    else loadDict("js/i18n-it-pt.js", initLang);
+  });
 
   /* ---------- FAQ accordéon ---------- */
   document.querySelectorAll(".faq-item").forEach(function (item) {

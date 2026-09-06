@@ -1,0 +1,28 @@
+/* ============================================================
+   REFLEX IA : bloc "Qui est derriere"
+   Charge apres css/styles.css. Si la photo est absente du depot,
+   la figure se masque et le texte occupe toute la largeur.
+   ============================================================ */
+.founder-section{background:var(--cream-2)}
+.founder-wrap{display:flex;gap:56px;align-items:center;flex-wrap:wrap}
+.founder-photo{
+  flex:0 0 34%;min-width:260px;position:relative;margin:0;
+  border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lift);
+}
+.founder-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.founder-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:30px 26px 22px;color:#fff;
+  font-family:var(--font-display);font-weight:700;font-size:1.3rem;line-height:1.2;
+  background:linear-gradient(to top,rgba(22,49,29,.90),rgba(22,49,29,.32) 58%,transparent);
+}
+.founder-photo figcaption span{
+  display:block;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--terra-light);margin-top:8px;
+}
+.founder-text{flex:1 1 380px;min-width:0}
+.founder-lead{font-size:1.2rem;font-weight:600;color:var(--ink);margin:4px 0 18px}
+.founder-text p{color:var(--ink-soft);margin-bottom:14px;font-size:1rem}
+@media (max-width:1024px){
+  .founder-wrap{gap:38px}
+  .founder-photo{flex:0 0 100%;max-width:380px;margin:0 auto}
+}
