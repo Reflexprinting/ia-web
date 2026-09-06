@@ -134,3 +134,38 @@
 
 /* Section references : fond creme pour ne pas coller a la section blanche suivante */
 .section-refs{background:var(--cream-2)}
+
+/* ---------- Correctif barre de navigation ----------
+   L entree du catalogue s ajoute a un menu deja charge : on empeche les
+   retours a la ligne et on masque les liens que le menu deroulant reprend. */
+.nav-drop>button{white-space:nowrap}
+@media (min-width:761px){
+  .logo strong,.logo span{white-space:nowrap}
+  .nav a[href="#solutions"],.nav a[href="#restaurants"]{display:none}
+}
+@media (max-width:1200px) and (min-width:761px){
+  .nav a[href="#apps"]{display:none}
+}
+@media (max-width:400px){
+  .logo strong{font-size:1rem}
+  .logo span{display:none}
+  .header-inner{gap:8px;padding:0 8px 0 14px}
+  .header-actions{gap:4px}
+  .lang-switch{gap:0;padding:2px}
+  .lang-switch button{padding:5px 4px;font-size:.6rem}
+}
+
+/* ---------- Correctif majeur : debordement du hero sur mobile ----------
+   Une piste de grille "1fr" prend pour minimum la largeur mini de son contenu.
+   Ici elle gonflait a 480 px sur un ecran de 360 px : le texte etait coupe a
+   droite, sans barre de defilement, masque par overflow-x:hidden du body.
+   min-width:0 sur les enfants force les pistes a respecter l ecran, sans
+   toucher au nombre de colonnes. */
+.hero-grid>*,.resto-wrap>*,.tech-lead>*,.idea-wrap>*,.split>*,.split-txt>*,
+.cards>*,.price-grid>*,.apps-grid>*,.proof-grid>*,.eco-grid>*,.site-grid>*,
+.tech-grid>*,.metiers-grid>*,.lovvi-grid>*,.ia-grid>*,.timeline>*,
+.human-band>*,.mod-grid>*,.hub-grid>*,.ref-grid>*,.footer-grid>*,.form-grid>*{
+  min-width:0;
+}
+.hero-photo,.resto-photo,.tech-photo,.split-photo,.section-photo,
+.site-shot,.founder-photo img,.human-band img{max-width:100%}
