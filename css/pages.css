@@ -169,3 +169,58 @@
 }
 .hero-photo,.resto-photo,.tech-photo,.split-photo,.section-photo,
 .site-shot,.founder-photo img,.human-band img{max-width:100%}
+
+/* ============================================================
+   HERO SOMBRE
+   Le haut de page manquait d impact en creme clair. Il passe en aplat
+   vert profond, comme les sections Technique et IA, pour donner le ton
+   des la premiere seconde.
+   ============================================================ */
+.hero{
+  background:
+    radial-gradient(880px 560px at 84% 0%,rgba(210,98,44,.30),transparent 62%),
+    radial-gradient(700px 480px at -6% 62%,rgba(127,169,126,.16),transparent 58%),
+    linear-gradient(168deg,#1B3A22 0%,var(--olive-deep) 46%,#12281A 100%);
+}
+.hero h1{color:#fff}
+.hero h1 span{color:var(--terra-light)}
+.hero-sub{color:rgba(255,255,255,.82)}
+.hero-note{color:rgba(255,255,255,.52)}
+.hero .badge{
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.20);
+  color:rgba(255,255,255,.94);box-shadow:none;
+}
+.hero .badge::before{background:var(--olive-light)}
+.hero .badge:nth-child(2n)::before{background:var(--terra-light)}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.42)}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.hero .btn-primary{background:var(--terra);box-shadow:0 14px 32px rgba(0,0,0,.34)}
+.hero .btn-primary:hover{background:var(--terra-dark)}
+.hero-photo{box-shadow:0 34px 80px rgba(0,0,0,.45)}
+.hero .mock{box-shadow:0 22px 55px rgba(0,0,0,.38)}
+
+/* Le bandeau blanc du menu se detache mieux sur fond sombre */
+.header-inner{box-shadow:0 10px 34px rgba(0,0,0,.16)}
+
+/* Meme traitement sur les pages du catalogue */
+.page-hero{
+  background:
+    radial-gradient(820px 520px at 86% 0%,rgba(210,98,44,.28),transparent 62%),
+    radial-gradient(640px 440px at -6% 58%,rgba(127,169,126,.14),transparent 58%),
+    linear-gradient(168deg,#1B3A22 0%,var(--olive-deep) 48%,#12281A 100%);
+}
+.page-hero h1{color:#fff}
+.page-accroche{color:var(--terra-light)}
+.page-intro{color:rgba(255,255,255,.82)}
+.fil{color:rgba(255,255,255,.45)}
+.fil a{color:rgba(255,255,255,.78)}
+.fil a:hover{color:#fff}
+.fil-actuel{color:rgba(255,255,255,.45)}
+.page-ico{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.20);box-shadow:none}
+.page-prix{
+  background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#fff;
+}
+.page-hero .btn-primary{background:var(--terra);box-shadow:0 14px 32px rgba(0,0,0,.34)}
+.page-hero .btn-primary:hover{background:var(--terra-dark)}
+.page-hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.42)}
+.page-hero .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
