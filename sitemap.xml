@@ -9,6 +9,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ia-web.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ia-web.com/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ia-web.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ia-web.com/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ia-web.com/?lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ia-web.com/"/>
   </url>
+  <url><loc>https://ia-web.com/mentions-legales.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://ia-web.com/confidentialite.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
