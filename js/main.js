@@ -101,6 +101,14 @@
     else loadDict("js/i18n-it-pt.js", initLang);
   });
 
+  /* ---------- Catalogue : styles et menu deroulant ----------
+     Charges ici pour ne pas alourdir index.html. */
+  var lien = document.createElement("link");
+  lien.rel = "stylesheet";
+  lien.href = "css/pages.css";
+  document.head.appendChild(lien);
+  loadDict("js/menu.js", function () {});
+
   /* ---------- FAQ accordéon ---------- */
   document.querySelectorAll(".faq-item").forEach(function (item) {
     var q = item.querySelector(".faq-q");
