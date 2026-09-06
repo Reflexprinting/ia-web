@@ -1,5 +1,5 @@
 /* ============================================================
-   REFLEX IA — ia-web.com — Charte graphique 2026 « Clair & Humain »
+   REFLEX IA · ia-web.com · Charte graphique 2026 « Clair & Humain »
    Palette : Crème #FAF7F2 · Encre #1F2A24 · Olive #4F6F52
              Terracotta #C4703F · Blanc #FFFFFF
    ============================================================ */
@@ -533,6 +533,23 @@ h2{font-size:clamp(1.8rem,3.7vw,2.7rem)}
 .split-photo{width:100%;height:400px;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lift)}
 .split h2{margin-bottom:16px}
 .split p{color:var(--ink-soft)}
+
+
+/* ---------- Ligne de contact directe ---------- */
+.contact-line{margin-top:26px;font-size:.98rem;color:rgba(255,255,255,.86)}
+.contact-line a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Note honnete sur les visuels ---------- */
+.footer-note{
+  flex-basis:100%;order:3;margin-top:18px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.10);
+  font-size:.76rem;line-height:1.6;color:rgba(255,255,255,.40);max-width:820px;
+}
+
+/* ---------- Liste a puces editoriale (hors carte) ---------- */
+.split .resto-list li{padding-left:26px;margin-bottom:20px}
+.split .resto-list li b{display:block;color:var(--ink);font-size:1rem;margin-bottom:2px}
+.split .resto-list li span{font-size:.94rem}
 
 /* ---------- Reveal animations ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
